@@ -1,0 +1,38 @@
+<header class="site-header" role="banner" style="background-color: {{ page.color | escape }}">
+
+  <div class="wrapper" id="header-content">
+
+    <div class="site-header-nav">
+      
+      {%- assign default_paths = site.pages | map: "path" -%}
+      {%- assign page_paths = site.header_pages | default: default_paths -%}
+      
+      <a class="site-title" rel="author" href="{{ "/" | relative_url }}"></a>
+
+      <div class="site-header-nav-links">
+
+        <a class="page-link" href="https://wolfjay.bandcamp.com">Bandcamp</a>
+        <a class="page-link" href="/links">links</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="site-header-page-info">
+      <p class="post-meta">
+        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          {{ page.date | date: date_format }}
+        </time>
+      </p>
+      <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+      <h4 class="post-subtitle">{{ page.subtitle | escape }}</h4>
+    </div>
+
+  </div>
+
+  <div class="site-header-emoji-background"><span class="">{{ page.emoji }}</span></div>
+
+</header>
+

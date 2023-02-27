@@ -1,0 +1,875 @@
+// Reset
+
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure, strong, em {
+  margin: 0;
+  font-weight: normal !important;
+}
+
+body {
+}
+
+main {
+  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+
+ // Set `margin-bottom` to maintain vertical rhythm
+
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-bottom: ($spacing-unit*0.2) ;
+}
+
+.jac-kie-header {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.jac-kie-intro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1200px;
+}
+
+.jac-kie-intro-col1 {
+  width: 50%;
+}
+
+.jac-kie-intro-col2 {
+  width: 50%;
+  text-align: center;
+}
+
+.jac-kie-portrait {
+  min-width: 100% !important;
+  min-height: 600px !important;
+  background-image: url("Jackie-Portrait.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.jac-kie-logo-hollow {
+  min-width: 100% !important;
+  min-height: 150px !important;
+  background-image: url("Jackie-Hollow-Logo.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: $spacing-unit;
+}
+
+
+
+// Wrapper
+
+.wrapper {
+  // max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 1.5));
+  // max-width:         calc(#{$content-width} - (#{$spacing-unit} * 1.5));
+  max-width: -webkit-calc(#{$content-width});
+  max-width:         calc(#{$content-width});
+  margin-right: auto;
+  margin-left: auto;
+
+  // @extend %clearfix;
+
+  @include media-query($on-laptop) {
+    // max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    // max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    max-width: -webkit-calc(#{$content-width});
+    max-width:         calc(#{$content-width});  
+    }
+}
+
+
+header {
+  // position: sticky !important;
+  top: 0;
+}
+
+.site-header {
+  height: 40rem;
+  max-width: 100vw;
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: $spacing-unit * 0.3;
+  padding-right: $spacing-unit * 0.3;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  text-shadow: 4px 4px 40px rgba(30, 39, 30, 0.7);
+}
+
+#header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100% !important;
+  width: 100%;
+}
+
+.site-header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.site-header-nav-links {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+}
+
+.page-link {
+  padding-left: 2rem;
+}
+
+.site-header-emoji-background {
+  letter-spacing: -1vw;
+  @include relative-font-size(30.325);
+  text-align: center;
+  position: absolute;
+  z-index: 0;
+  // top: 0;
+  // left: 0;
+  filter: blur(50px) saturate(3);
+  transform: translate3d(0, 0, 0);
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  overflow: hidden;
+  min-width: 4000px;
+  z-index: -1;
+}
+
+.site-header-page-info {
+  margin-bottom: $spacing-unit * 0.2;
+}
+
+.post-meta {
+  text-shadow: none !important;
+}
+
+.site-title {
+  @include relative-font-size(1.625);
+  font-weight: 300;
+  line-height: $base-line-height * $base-font-size * 2.25;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  min-width: 200px !important;
+  min-height: 80px !important;
+  float: left;
+  background-image: url("images/blog-le-wolfjay-logo.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &,
+  &:visited {
+    color: $grey-color-dark;
+  }
+}
+
+.post-subtitle {
+  padding-top: 0px;
+}
+
+
+// Typography
+
+:root {
+  --nemon-wght: 400;
+  --nemon-ital: 0;
+}
+
+* {
+  font-variation-settings:  "wght" var(--nemon-wght),
+                            "ital" var(--nemon-ital);
+}
+
+body {
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+     -moz-font-feature-settings: "kern" 1;
+       -o-font-feature-settings: "kern" 1;
+          font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+p {
+  line-height: ($base-line-height) * 1.2;
+  text-align: left;
+}
+
+strong {
+  --nemon-wght: 500;
+  font-style: normal !important;
+  color: $secondary-color;
+}
+
+em {
+  --nemon-ital: 900;
+}
+
+hr {
+  margin-top: ($spacing-unit * 0.5);
+  margin-bottom: ($spacing-unit * 0.5);
+  color: $brand-color;
+  border-color: $brand-color;
+}
+
+h1 {
+  @include relative-font-size(3.025);
+  color: $heading-color;
+  font-family: radio;
+  @include media-query($on-laptop) {
+    @include relative-font-size(1.85);}
+     line-height: ($base-line-height) * 0.9;
+     letter-spacing: 1px;
+}
+
+h2 {
+  @include relative-font-size(2.225);
+  font-family: radio;
+  color: $heading-color;
+  @include media-query($on-laptop) {
+    @include relative-font-size(2.055);}
+  // --nemon-wght: 400;
+  line-height: ($base-line-height*0.8);
+}
+
+h3 {
+  @include relative-font-size(1.725);
+  @include media-query($on-laptop) {
+    @include relative-font-size(1.525);}
+  --nemon-wght: 400;
+  line-height: ($base-line-height);
+}
+
+h4 {
+  @include relative-font-size(1.20);
+  @include media-query($on-laptop) {
+    @include relative-font-size(1.15);}
+    --nemon-wght: 400;
+    line-height: ($base-line-height);
+}
+
+h5 {
+  @include relative-font-size(1.125);
+  @include media-query($on-laptop) {
+    @include relative-font-size(1.025);}
+  --nemon-wght: 400;
+  line-height: ($base-line-height);
+  margin-bottom: -($spacing-unit * 0.4);
+  margin-top: ($spacing-unit * 0.4);
+  color: $text-color;
+}
+
+
+figcaption {
+  --nemon-wght: 400;
+  --nemon-ital: 900;
+  margin-bottom: ($spacing-unit);
+  text-align: center;
+  @include relative-font-size(0.725);
+  @include media-query($on-laptop) {
+    @include relative-font-size(0.5225);}
+}
+
+p .bigger {
+  @include relative-font-size(1.20);
+  --nemon-wght: 600;
+}
+
+br {
+  height: ($spacing-unit * 1.3);
+}
+
+// Links
+
+a {
+  color: $text-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $text-color;
+  }
+
+  &:hover {
+    color: $secondary-color;
+    text-decoration: underline;
+  }
+}
+
+article a {
+  color: $text-color;
+  text-decoration: underline;
+  transition: color 0.1s ease-in-out;
+  will-change: color;
+
+  &:visited {
+    color: $text-color;
+  }
+
+  &:hover {
+    color: $brand-color;
+  }
+}
+
+// Home Styling
+
+.page-content {
+  flex: 1;
+  color: $text-color;
+  background-color: $background-color;
+  z-index: 2;
+  position: relative;
+}
+
+.home-header {
+  padding-left: $spacing-unit * 0.3;
+  padding-right: $spacing-unit * 0.3;
+}
+
+.page-heading {
+  @include relative-font-size(2);
+}
+
+.post-card-list {
+  margin-top: -30rem;
+}
+
+.post-list-heading {
+  @include relative-font-size(1.75);
+  margin-bottom: $spacing-unit;
+}
+
+.post-card-list a {
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+
+.post-card-list a:hover {
+  text-decoration: none;
+  transform: scale(1.03);
+  color: $text-color;
+}
+
+.post-card {
+  padding: $spacing-unit * 0.4;
+  margin-bottom: $spacing-unit * 0.4;
+  border-radius: 4px;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: auto;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  @include media-query($on-laptop) {
+    padding: $spacing-unit * 0.2;
+    transform: scale(0.95);
+  }
+}
+
+.post-card-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @include media-query($on-laptop) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.post-card-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 65%;
+  z-index: 3;
+  @include media-query($on-laptop) {
+    max-width: 100%;
+  }
+}
+
+.post-card-header-text h2 {
+  margin-bottom: 5px;
+}
+
+.post-card-body p {
+  margin-bottom: 0px;
+}
+
+.post-card-header-emoji {
+  max-width: 35%;
+  @include relative-font-size(2.625);
+  z-index: 2;
+  @include media-query($on-laptop) {
+    max-width: 100%;
+  }
+}
+
+.post-card:hover {
+  text-decoration: none;
+  transform: scale(1.01);
+}
+
+.post-meta {
+  font-size: $small-font-size;
+  color: $grey-color;
+  margin-bottom: $spacing-unit * 0.2;
+}
+
+.post-link {
+  display: block;
+  @include relative-font-size(1.3);
+  line-height: 1;
+  font-variation-settings: "wght" 300, "DIAC" 50;
+  font-feature-settings: "liga" on, "cpsp" on, "kern" on;
+}
+
+
+// Post Styling
+
+// .post-header {
+//   background-color: $brand-color;
+//   max-width: 100%;
+//   margin-bottom: ($spacing-unit*0.8);
+//   padding: 1rem;
+//   box-shadow: 0px 0px 0px 1px #0B0A07;
+//   padding-top: 20rem;
+//   color: #eef;
+//   z-index: -1;
+//   margin-top: -10rem;
+// }
+
+.post-meta {
+  color: #0B0A07 !important;
+}
+
+//  {
+//   @include relative-font-size(2.625);
+//   letter-spacing: -1px;
+//   line-height: 1;
+
+//   @include media-query($on-laptop) {
+//     @include relative-font-size(2.25);
+//   }
+// }
+
+.post-content {
+  margin-bottom: $spacing-unit*1.2;
+  margin-top: $spacing-unit*1.2;
+  z-index: 99;
+  @include media-query($on-laptop) {
+    padding-left: $spacing-unit * 0.3;
+    padding-right: $spacing-unit * 0.3;
+  }
+}
+
+.post-content img {
+  width: 80%;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
+}
+
+.post-caption {
+  text-align: center;
+  @include relative-font-size(0.7);
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.twitter-tweet {
+  margin: 3rem auto 3rem auto !important;
+}
+
+// Post Blog Styling
+
+.post-blog {
+  background-color: $text-color;
+  color: $background-color;
+  padding: $spacing-unit*0.4;
+  margin-bottom: $spacing-unit;
+  @include media-query($on-laptop) {
+    margin-bottom: 0px;
+  }
+}
+
+.post-blog h3 {
+  color: $background-color !important;
+}
+
+.post-blog a {
+  color: $background-color;
+  text-decoration: underline;
+  transition: color 0.1s ease-in-out;
+  will-change: color;
+
+  &:visited {
+    color: $background-color;
+  }
+
+  &:hover {
+    color: $brand-color;
+  }
+}
+
+
+// Wolfjay Links Landing
+
+.landing-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 20%;
+}
+
+.landing-header p {
+  @include relative-font-size(0.7);
+  line-height: $base-line-height * $base-font-size * 0.78;
+  text-align: center !important;
+}
+
+.wolfjay-logo {
+    margin-bottom: 0;
+    min-width: 200px !important;
+    min-height: 80px !important;
+    background-image: url("/assets/wolfjay-logo-2021.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.landing-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 16rem;
+  padding: 5px;
+}
+
+.landing-links h3 {
+  @include relative-font-size(1);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.landing-links a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  @include relative-font-size(0.8);
+  line-height: $base-line-height * $base-font-size * 1;
+  background-color: #F4EADE;
+  border-radius: 5px;
+  margin-bottom: $spacing-unit*0.15;
+  color: #0B0A07;
+  text-decoration: none;
+  padding: 6px 2px 6px 2px;
+  box-shadow: 0;
+  transition: all 0.3s ease-in-out;
+  will-change: box-shadow, transform;
+}
+
+.landing-links a:hover {
+  box-shadow: 5px 5px 10px -5px;
+  transform: scale(1.01);
+}
+
+.landing-links p {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  line-height: $base-line-height * $base-font-size * 0.78;
+}
+
+.landing-links ul {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.landing-links-icon {
+  max-height: 20px;
+  max-width: 20px;
+}
+
+// Album Artwork
+
+.in-realtime-artwork {
+width: 300px;
+height: 300px;
+background-image: url("images/artwork/in-realtime-artwork-small.jpg");
+background-position-y: center;
+background-position-x: center;
+background-repeat: no-repeat;
+background-size: contain;
+margin-bottom: 1rem;
+}
+
+// Wolfjay Portraits
+
+.wolfjay-portrait-square {
+  margin-bottom: 1rem;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0px 0px 0px 1px #0B0A07;
+    background: linear-gradient(124deg, #f9a230, #feb95f, #49d3b2, #22eaba, #633cfd, #4c28da);
+    background-size: 1200% 1200%;
+    -webkit-animation: wj-portrait-bg 42s ease infinite;
+    -moz-animation: wj-portrait-bg 42s ease infinite;
+    animation: wj-portrait-bg 42s ease infinite;
+}
+
+@-webkit-keyframes wj-portrait-bg {
+    0%{background-position:0% 22%}
+    50%{background-position:100% 79%}
+    100%{background-position:0% 22%}
+}
+@-moz-keyframes wj-portrait-bg {
+    0%{background-position:0% 22%}
+    50%{background-position:100% 79%}
+    100%{background-position:0% 22%}
+}
+@keyframes wj-portrait-bg { 
+    0%{background-position:0% 22%}
+    50%{background-position:100% 79%}
+    100%{background-position:0% 22%}
+}
+
+.wolfjay-portrait-square-fg {
+  background-image: url("images/wolfjay-illu-la-portrait-svgomg.svg");
+  background-size: 100px;
+  background-position-y: -50%;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.wolfjay-portrait-rect {
+  width: 200px;
+  height: 240px;
+  box-shadow: 0px 0px 0px 1px #0B0A07;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  background: linear-gradient(124deg, #f9a230, #feb95f, #49d3b2, #22eaba, #633cfd, #4c28da);
+  background-size: 1200% 1200%;
+  -webkit-animation: wj-portrait-bg 42s ease infinite;
+  -moz-animation: wj-portrait-bg 42s ease infinite;
+  animation: wj-portrait-bg 42s ease infinite;
+}
+
+@-webkit-keyframes wj-portrait-bg {
+    0%{background-position:0% 22%}
+    50%{background-position:100% 79%}
+    100%{background-position:0% 22%}
+}
+@-moz-keyframes wj-portrait-bg {
+    0%{background-position:0% 22%}
+    50%{background-position:100% 79%}
+    100%{background-position:0% 22%}
+}
+@keyframes wj-portrait-bg { 
+    0%{background-position:0% 22%}
+    50%{background-position:100% 79%}
+    100%{background-position:0% 22%}
+}
+
+.wolfjay-portrait-rect-fg {
+  background-image: url("images/wolfjay-illu-la-portrait-svgomg.svg");
+  background-size: 160px;
+  background-position-y: bottom;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+
+// Blockquotes
+
+blockquote {
+  color: $grey-color;
+  border-left: 4px solid $grey-color-light;
+  padding-left: $spacing-unit / 2;
+  @include relative-font-size(1.125);
+  letter-spacing: 0px;
+  font-style: italic;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+// Lists
+
+ul, ol {
+  margin-left: $spacing-unit;
+}
+
+ul {
+  list-style: none; /* Remove default bullets */
+  margin: 0px;
+}
+
+.post-content ul li::before {
+  content: "\2022";  
+  color: #FEB95F; 
+  // font-weight: bold; 
+  display: inline-block; /* Needed to add space between the bullet and the text */ 
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+.post-content li {
+  margin-bottom: 0.6em;
+}
+
+.post-content li p {
+  margin-top: -1.16em !important;
+}
+
+
+// Images
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
+// Figures
+
+figure > img {
+  display: block;
+}
+
+
+// Code
+
+pre,
+code {
+  @include relative-font-size(0.9375);
+  border: 1px solid $grey-color-light;
+  border-radius: 3px;
+  background-color: #eef; 
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+// Icons
+
+.svg-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    fill: #{$grey-color};
+    padding-right: 5px;
+    vertical-align: text-top;
+}
+
+.social-media-list {
+  li + li {
+    padding-top: 5px;
+  }
+}
+
+
+// Tables
+
+table {
+  margin-bottom: $spacing-unit;
+  width: 100%;
+  text-align: $table-text-align;
+  color: lighten($text-color, 18%);
+  border-collapse: collapse;
+  border: 1px solid $grey-color-light;
+  tr {
+    &:nth-child(even) {
+      background-color: lighten($grey-color-light, 6%);
+    }
+  }
+  th, td {
+    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+  }
+  th {
+    background-color: lighten($grey-color-light, 3%);
+    border: 1px solid darken($grey-color-light, 4%);
+    border-bottom-color: darken($grey-color-light, 12%);
+  }
+  td {
+    border: 1px solid $grey-color-light;
+  }
+}
+
+
+// Footer
+
+.site-footer {
+  padding: $spacing-unit * 0.3;
+}
