@@ -1,7 +1,6 @@
 ---
 layout: default
-title:  "jac-kie-home"
-
+title:  "Jackie"
 ---
 
 <style>
