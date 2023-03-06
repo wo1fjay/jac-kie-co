@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Jackie"
+title:  "Jackie ✨"
 ---
 
 <style>

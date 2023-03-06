@@ -4,17 +4,31 @@ main { display: block; /* Default value of `display` of `main` element is 'inlin
 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { margin-bottom: 11.2px; }
 
-.jac-kie-header { width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.jac-kie-header { width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; background: #ebd070; background: linear-gradient(138deg, #ebd070 0%, #f0ede4 19%, #f0ede4 100%); }
 
-.jac-kie-intro { display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 1200px; }
+.jac-kie-intro { display: flex; flex-direction: row; align-items: center; justify-content: space-between; margin-top: 10vh; width: 960px; height: auto; }
 
-.jac-kie-intro-col1 { width: 50%; }
+.jac-kie-intro-col1 { max-width: 25%; }
 
-.jac-kie-intro-col2 { width: 50%; text-align: center; }
+.jac-kie-intro-col2 { max-width: 80%; display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; }
 
-.jac-kie-portrait { min-width: 100% !important; min-height: 600px !important; background-image: url("Jackie-Portrait.png"); background-size: contain; background-position: center; background-repeat: no-repeat; }
+.jac-kie-intro-col2-1 { width: 100%; }
 
-.jac-kie-logo-hollow { min-width: 100% !important; min-height: 150px !important; background-image: url("Jackie-Hollow-Logo.svg"); background-size: contain; background-position: center; background-repeat: no-repeat; margin-bottom: 56px; }
+.jac-kie-intro-col2-2 { width: 60%; align-self: center; height: auto; }
+
+.jac-kie-intro-col2-3 { width: 40%; height: auto; align-self: center; }
+
+.jac-kie-portrait { min-width: 100% !important; height: 350px !important; background-image: url("Jackie-Portrait.png"); background-size: contain; background-position: center; background-repeat: no-repeat; }
+
+.image-caption { text-align: center; }
+
+.jac-kie-logo-hollow { width: 200px !important; height: 400px !important; background-image: url("Jackie-Hollow-Logo-Rotated.svg"); background-size: contain; background-position: center; background-repeat: no-repeat; margin-left: auto; margin-right: auto; }
+
+.header-light { --nemon-wght: 300; font-size: 24px; }
+
+.inline-jackie-logo { width: 130px !important; height: 36px !important; background-image: url("Jackie-Solid-Logo.svg"); background-size: contain; background-position: center; background-repeat: no-repeat; color: rgba(0, 0, 0, 0); display: inline-block; }
+
+@media only screen and (max-width: 960px) { .jac-kie-header { width: 100%; height: auto; display: flex; flex-direction: row; align-items: center; background: #ebd070; background: linear-gradient(138deg, #ebd070 0%, #f0ede4 19%, #f0ede4 100%); } .jac-kie-intro { display: flex; flex-direction: row; align-items: center; height: auto; padding: 1rem; margin-top: 0; } .jac-kie-intro-col1 { display: none; } .jac-kie-intro-col2 { max-width: 90%; margin-top: 2rem; display: flex; flex-direction: row; flex-wrap: wrap; align-items: left; justify-content: space-between; } .jac-kie-intro-col2-1 { width: 100%; order: 1; } .jac-kie-intro-col2-2 { width: 100%; height: auto; order: 3; } .jac-kie-intro-col2-3 { width: auto; height: auto; order: 2; } .jac-kie-portrait { min-width: auto !important; height: 200px !important; background-image: url("Jackie-Portrait.png"); background-size: contain; background-position: center; background-repeat: no-repeat; } .image-caption { text-align: center; } .jac-kie-logo-hollow { width: 175px !important; height: 350px !important; background-image: url("Jackie-Hollow-Logo-Rotated.svg"); background-size: contain; background-position: center; background-repeat: no-repeat; margin-left: auto; margin-right: auto; position: fixed; left: -30px; top: 60px; } }
 
 .wrapper { max-width: -webkit-calc(680px); max-width: calc(680px); margin-right: auto; margin-left: auto; }
 
@@ -22,7 +36,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { mar
 
 header { top: 0; }
 
-.site-header { height: 40rem; max-width: 100vw; color: #3E3C37; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-left: 16.8px; padding-right: 16.8px; overflow: hidden; position: relative; z-index: 0; text-shadow: 4px 4px 40px rgba(30, 39, 30, 0.7); }
+.site-header { height: 40rem; max-width: 100vw; color: #212442; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-left: 16.8px; padding-right: 16.8px; overflow: hidden; position: relative; z-index: 0; text-shadow: 4px 4px 40px rgba(30, 39, 30, 0.7); }
 
 #header-content { display: flex; flex-direction: column; justify-content: space-between; height: 100% !important; width: 100%; }
 
@@ -48,7 +62,7 @@ header { top: 0; }
 
 * { font-variation-settings: "wght" var(--nemon-wght), "ital" var(--nemon-ital); }
 
-body { font: 400 18px/1.3 radio, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; color: #3E3C37; background-color: #F0EDE4; -webkit-text-size-adjust: 100%; -webkit-font-feature-settings: "kern" 1; -moz-font-feature-settings: "kern" 1; -o-font-feature-settings: "kern" 1; font-feature-settings: "kern" 1; font-kerning: normal; display: flex; min-height: 100vh; flex-direction: column; }
+body { font: 400 18px/1.3 radio, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; color: #212442; background-color: #F0EDE4; -webkit-text-size-adjust: 100%; -webkit-font-feature-settings: "kern" 1; -moz-font-feature-settings: "kern" 1; -o-font-feature-settings: "kern" 1; font-feature-settings: "kern" 1; font-kerning: normal; display: flex; min-height: 100vh; flex-direction: column; }
 
 p { line-height: 1.56; text-align: left; }
 
@@ -58,15 +72,15 @@ em { --nemon-ital: 900; }
 
 hr { margin-top: 28px; margin-bottom: 28px; color: #DD75C0; border-color: #DD75C0; }
 
-h1 { font-size: 54.45px; color: #3E3C37; font-family: radio; line-height: 1.17; letter-spacing: 1px; }
+h1 { font-size: 54.45px; color: #212442; font-family: radio; line-height: 1.17; letter-spacing: 1px; }
 
 @media screen and (max-width: 680px) { h1 { font-size: 33.3px; } }
 
-h2 { font-size: 40.05px; font-family: radio; color: #3E3C37; line-height: 1.04; }
+h2 { font-size: 38.25px; font-family: radio; color: #212442; line-height: 1.04; }
 
-@media screen and (max-width: 680px) { h2 { font-size: 36.99px; } }
+@media screen and (max-width: 680px) { h2 { font-size: 35.19px; } }
 
-h3 { font-size: 31.05px; --nemon-wght: 400; line-height: 1.3; }
+h3 { font-size: 31.05px; --nemon-wght: 400; line-height: 1.17; }
 
 @media screen and (max-width: 680px) { h3 { font-size: 27.45px; } }
 
@@ -74,7 +88,7 @@ h4 { font-size: 21.6px; --nemon-wght: 400; line-height: 1.3; }
 
 @media screen and (max-width: 680px) { h4 { font-size: 20.7px; } }
 
-h5 { font-size: 20.25px; --nemon-wght: 400; line-height: 1.3; margin-bottom: -22.4px; margin-top: 22.4px; color: #3E3C37; }
+h5 { font-size: 20.25px; --nemon-wght: 400; line-height: 1.3; margin-top: 22.4px; color: #212442; }
 
 @media screen and (max-width: 680px) { h5 { font-size: 18.45px; } }
 
@@ -86,19 +100,19 @@ p .bigger { font-size: 21.6px; --nemon-wght: 600; }
 
 br { height: 72.8px; }
 
-a { color: #3E3C37; text-decoration: none; }
+a { color: #212442; text-decoration: underline; }
 
-a:visited { color: #3E3C37; }
+a:visited { color: #212442; }
 
 a:hover { color: #EDA335; text-decoration: underline; }
 
-article a { color: #3E3C37; text-decoration: underline; transition: color 0.1s ease-in-out; will-change: color; }
+article a { color: #212442; text-decoration: underline; transition: color 0.1s ease-in-out; will-change: color; }
 
-article a:visited { color: #3E3C37; }
+article a:visited { color: #212442; }
 
 article a:hover { color: #DD75C0; }
 
-.page-content { flex: 1; color: #3E3C37; background-color: #F0EDE4; z-index: 2; position: relative; }
+.page-content { flex: 1; color: #212442; background-color: #F0EDE4; z-index: 2; position: relative; }
 
 .home-header { padding-left: 16.8px; padding-right: 16.8px; }
 
@@ -110,7 +124,7 @@ article a:hover { color: #DD75C0; }
 
 .post-card-list a { transition: transform 0.3s ease-in-out; will-change: transform; }
 
-.post-card-list a:hover { text-decoration: none; transform: scale(1.03); color: #3E3C37; }
+.post-card-list a:hover { text-decoration: none; transform: scale(1.03); color: #212442; }
 
 .post-card { padding: 22.4px; margin-bottom: 22.4px; border-radius: 4px; transition: transform 0.3s ease-in-out; will-change: transform; display: flex; flex-direction: column; justify-content: space-between; width: auto; margin-left: 0.2rem; margin-right: 0.2rem; }
 
@@ -150,7 +164,7 @@ article a:hover { color: #DD75C0; }
 
 .twitter-tweet { margin: 3rem auto 3rem auto !important; }
 
-.post-blog { background-color: #3E3C37; color: #F0EDE4; padding: 22.4px; margin-bottom: 56px; }
+.post-blog { background-color: #212442; color: #F0EDE4; padding: 22.4px; margin-bottom: 56px; }
 
 @media screen and (max-width: 680px) { .post-blog { margin-bottom: 0px; } }
 
@@ -248,7 +262,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .social-media-list li + li { padding-top: 5px; }
 
-table { margin-bottom: 56px; width: 100%; text-align: left; color: #6f6b62; border-collapse: collapse; border: 1px solid white; }
+table { margin-bottom: 56px; width: 100%; text-align: left; color: #40457f; border-collapse: collapse; border: 1px solid white; }
 
 table tr:nth-child(even) { background-color: white; }
 

@@ -24,13 +24,17 @@ ul, ol, dl, figure,
   margin-bottom: ($spacing-unit*0.2) ;
 }
 
+
+// @media only screen and (min-width: 960px) {
 .jac-kie-header {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  background: rgb(235,208,112);
+  background: linear-gradient(138deg, rgba(235,208,112,1) 0%, rgba(240,237,228,1) 19%, rgba(240,237,228,1) 100%);
 }
 
 .jac-kie-intro {
@@ -38,36 +42,165 @@ ul, ol, dl, figure,
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 1200px;
+  margin-top: 10vh;
+  width: 960px;
+  height: auto;
 }
 
 .jac-kie-intro-col1 {
-  width: 50%;
+  max-width: 25%;
 }
 
 .jac-kie-intro-col2 {
-  width: 50%;
-  text-align: center;
+  max-width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jac-kie-intro-col2-1 {
+  width: 100%;
+}
+
+.jac-kie-intro-col2-2 {
+  width: 60%;
+  align-self: center;
+  height: auto;
+}
+
+.jac-kie-intro-col2-3 {
+  width: 40%;
+  height: auto;
+  align-self: center;
 }
 
 .jac-kie-portrait {
   min-width: 100% !important;
-  min-height: 600px !important;
+  height: 350px !important;
   background-image: url("Jackie-Portrait.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
+.image-caption {
+  text-align: center;
+}
+
 .jac-kie-logo-hollow {
-  min-width: 100% !important;
-  min-height: 150px !important;
-  background-image: url("Jackie-Hollow-Logo.svg");
+  width: 200px !important;
+  height: 400px !important;
+  background-image: url("Jackie-Hollow-Logo-Rotated.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  margin-bottom: $spacing-unit;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.header-light {
+  --nemon-wght: 300;
+  font-size: 24px;
+}
+
+.inline-jackie-logo {
+  width: 130px !important;
+  height: 36px !important;
+  background-image: url("Jackie-Solid-Logo.svg");
+  background-size: contain;
+  // background-attachment: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: rgba(0, 0, 0, 0);
+  display: inline-block;
+}
+
+  
+// } 
+
+
+
+@media only screen and (max-width: 960px) {
+  .jac-kie-header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: rgb(235,208,112);
+    background: linear-gradient(138deg, rgba(235,208,112,1) 0%, rgba(240,237,228,1) 19%, rgba(240,237,228,1) 100%);
+  }
+  .jac-kie-intro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    padding: 1rem;
+    margin-top: 0;
+  }
+  
+  .jac-kie-intro-col1 {
+    display: none;
+  }
+  
+  .jac-kie-intro-col2 {
+    max-width: 90%;
+    margin-top: 2rem;
+    // margin-left: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: left;
+    justify-content: space-between;
+  }
+  
+  .jac-kie-intro-col2-1 {
+    width: 100%;
+    order: 1;
+  }
+  
+  .jac-kie-intro-col2-2 {
+    width: 100%;
+    height: auto;
+    order: 3;
+  }
+  
+  .jac-kie-intro-col2-3 {
+    width: auto;
+    height: auto;
+    order: 2;
+  }
+  
+  .jac-kie-portrait {
+    min-width: auto !important;
+    height: 200px !important;
+    background-image: url("Jackie-Portrait.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .image-caption {
+    text-align: center;
+  }
+  
+  .jac-kie-logo-hollow {
+    width: 175px !important;
+    height: 350px !important;
+    background-image: url("Jackie-Hollow-Logo-Rotated.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    left: -30px;
+    top: 60px;
+  }
+
+} 
 
 
 
@@ -253,11 +386,11 @@ h1 {
 }
 
 h2 {
-  @include relative-font-size(2.225);
+  @include relative-font-size(2.125);
   font-family: radio;
   color: $heading-color;
   @include media-query($on-laptop) {
-    @include relative-font-size(2.055);}
+    @include relative-font-size(1.955);}
   // --nemon-wght: 400;
   line-height: ($base-line-height*0.8);
 }
@@ -267,7 +400,7 @@ h3 {
   @include media-query($on-laptop) {
     @include relative-font-size(1.525);}
   --nemon-wght: 400;
-  line-height: ($base-line-height);
+  line-height: ($base-line-height*0.9);
 }
 
 h4 {
@@ -284,7 +417,7 @@ h5 {
     @include relative-font-size(1.025);}
   --nemon-wght: 400;
   line-height: ($base-line-height);
-  margin-bottom: -($spacing-unit * 0.4);
+  // margin-bottom: -($spacing-unit * 0.4);
   margin-top: ($spacing-unit * 0.4);
   color: $text-color;
 }
@@ -313,7 +446,7 @@ br {
 
 a {
   color: $text-color;
-  text-decoration: none;
+  text-decoration: underline;
 
   &:visited {
     color: $text-color;
